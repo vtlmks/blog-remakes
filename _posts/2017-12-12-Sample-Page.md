@@ -23,6 +23,32 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 
 ### [](#header-3)Header 3
 
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}
+```
+
+```m68k
+    move.l  #$12345678, d0
+    add.l   d1, d0
+    rts
+```
+
+```nasm
+section .text
+    global _start
+
+_start:
+    mov rax, 60    ; syscall: exit
+    xor rdi, rdi   ; status: 0
+    syscall
+```
+
+
 ```js
 // Javascript code with syntax highlighting.
 var fun = function lang(l) {

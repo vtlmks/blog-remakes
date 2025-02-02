@@ -1,34 +1,68 @@
----
-layout: remake
-title: {{ page.title }}
-image: {{ page.image }}
-group: {{ page.group }}
-remake_coder: {{ page.remake_coder }}
-original_coder: {{ page.original_coder }}
-original_musician: {{ page.original_musician }}
-original_gfx: {{ page.original_gfx }}
-release_year: {{ page.release_year }}
-remake_year: {{ page.remake_year }}
-remake_rating: {{ page.remake_rating }}
-platform: {{ page.platform }}
-download_link: {{ page.download_link }}
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ddd;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            color: #fff;
+        }
+        .info {
+            display: flex;
+            flex-direction: row;
+        }
+        .info img {
+            max-width: 300px;
+            margin-right: 20px;
+            border: 2px solid #444;
+        }
+        .details {
+            flex-grow: 1;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .blog-content {
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ page.title }}</h1>
+        <div class="info">
+            <img src="{{ page.image }}" alt="Screenshot">
+            <div class="details">
+                <p><strong>Group(s):</strong> {{ page.group }}</p>
+                <p><strong>Remake Coder(s):</strong> {{ page.remake_coder }}</p>
+                <p><strong>Original Coder(s):</strong> {{ page.original_coder }}</p>
+                <p><strong>Original Musician(s):</strong> {{ page.original_musician }}</p>
+                <p><strong>Original Gfxer(s):</strong> {{ page.original_gfx }}</p>
+                <p><strong>Release Year:</strong> {{ page.release_year }}</p>
+                <p><strong>Remake Year:</strong> {{ page.remake_year }}</p>
+                <p><strong>Remake Rating:</strong> {{ page.remake_rating }}</p>
+                <p><strong>Original Platform:</strong> {{ page.platform }}</p>
+                <p><strong>Download:</strong> <a href="{{ page.download_link }}">Click here</a></p>
+            </div>
+        </div>
+        <div class="blog-content">
+            {{ content }}
+        </div>
+    </div>
+</body>
+</html>
 
-## {{ page.title }}
-
-![Screenshot]({{ page.image }})
-
-**Group(s):** {{ page.group }}  
-**Remake Coder(s):** {{ page.remake_coder }}  
-**Original Coder(s):** {{ page.original_coder }}  
-**Original Musician(s):** {{ page.original_musician }}  
-**Original Gfxer(s):** {{ page.original_gfx }}  
-**Release Year:** {{ page.release_year }}  
-**Remake Year:** {{ page.remake_year }}  
-**Remake Rating:** {{ page.remake_rating }}  
-**Original Platform:** {{ page.platform }}  
-**Download:** [Click here]({{ page.download_link }})
-
----
-
-{{ content }}
